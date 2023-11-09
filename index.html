@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Survey Assignment</title>
+    <style>
+        /* Add your CSS styling here */
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        #surveyLink {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Survey Assignment</h1>
+    <div id="surveyLink">
+        <a href="" target="_blank" id="surveyAnchor">Take the Survey</a>
+    </div>
+
+    <script>
+        // Define the two survey links
+        const surveyLinks = [
+            'https://www.surveyexample1.com',
+            'https://www.surveyexample2.com'
+        ];
+
+        // Function to randomly select a survey link
+        function getRandomSurveyLink() {
+            const randomIndex = Math.floor(Math.random() * surveyLinks.length);
+            return surveyLinks[randomIndex];
+        }
+
+        // Execute the random link selection on page load
+        window.onload = function() {
+            // Get a random survey link
+            const randomSurveyLink = getRandomSurveyLink();
+
+            // Set the href attribute of the anchor tag
+            const surveyAnchor = document.getElementById('surveyAnchor');
+            surveyAnchor.href = randomSurveyLink;
+        };
+    </script>
+</body>
+</html>
